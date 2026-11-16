@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seus jogos favoritos no EXGame">
+    <title>Favoritos | EXGame</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🎮 EXGame</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../../index.html" class="nav-link">
+                🏠 Início
+            </a>
+
+            <a href="explorar.html" class="nav-link">
+                🔎 Explorar
+            </a>
+
+            <a href="categorias.html" class="nav-link">
+                🗂️ Categorias
+            </a>
+
+            <a href="favoritos.html" class="nav-link active">
+                ❤️ Favoritos
+            </a>
+
+            <a href="minha-lista.html" class="nav-link">
+                📋 Minha lista
+            </a>
+
+            <a href="destaques.html" class="nav-link">
+                ⭐ Destaques
+            </a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+            <a href="perfil.html" class="nav-link">
+                👤 Meu perfil
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div class="page-heading">
+                <h1>Meus favoritos ❤️</h1>
+                <p>Os jogos que você mais gosta, reunidos em um só lugar.</p>
+            </div>
+
+            <a href="explorar.html" class="add-button">
+                + Explorar jogos
+            </a>
+
+        </header>
+
+        <section class="page-content">
+
+            <!-- RESUMO -->
+            <div class="favorites-summary">
+
+                <span class="summary-icon">❤️</span>
+
+                <div>
+                    <strong id="favorites-count">3 jogos</strong>
+                    <span>Na sua coleção de favoritos</span>
+                </div>
+
+            </div>
+
+            <!-- GRADE DE FAVORITOS -->
+            <div class="favorites-grid" id="favorites-grid">
+
+                <!-- JOGO 1 -->
+                <article class="favorite-card">
+
+                    <img
+                        src="../assets/images/EldenRing.jpg"
+                        alt="Capa do jogo Elden Ring"
+                    >
+
+                    <div class="favorite-card-content">
+
+                        <h3>Elden Ring</h3>
+                        <p>RPG de ação</p>
+
+                        <div class="favorite-card-footer">
+
+                            <span class="game-status">
+                                Quero jogar
+                            </span>
+
+                            <button
+                                type="button"
+                                class="remove-favorite"
+                                aria-label="Remover Elden Ring dos favoritos"
+                            >
+                                ♥ Remover
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- JOGO 2 -->
+                <article class="favorite-card">
+
+                    <img
+                        src="../assets/images/GodOfWar.jpeg"
+                        alt="Capa do jogo God of War"
+                    >
+
+                    <div class="favorite-card-content">
+
+                        <h3>God of War</h3>
+                        <p>Ação e aventura</p>
+
+                        <div class="favorite-card-footer">
+
+                            <span class="game-status">
+                                Concluído
+                            </span>
+
+                            <button
+                                type="button"
+                                class="remove-favorite"
+                                aria-label="Remover God of War dos favoritos"
+                            >
+                                ♥ Remover
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- JOGO 3 -->
+                <article class="favorite-card">
+
+                    <img
+                        src="../assets/images/HollowKnight.jpeg"
+                        alt="Capa do jogo Hollow Knight"
+                    >
+
+                    <div class="favorite-card-content">
+
+                        <h3>Hollow Knight</h3>
+                        <p>Metroidvania</p>
+
+                        <div class="favorite-card-footer">
+
+                            <span class="game-status">
+                                Jogando
+                            </span>
+
+                            <button
+                                type="button"
+                                class="remove-favorite"
+                                aria-label="Remover Hollow Knight dos favoritos"
+                            >
+                                ♥ Remover
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Game Tracker. Organize suas experiências.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../js/navegacao.js" defer></script>
+
+</body>
+</html>
