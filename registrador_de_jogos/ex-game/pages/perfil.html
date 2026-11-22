@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil do usuário no EXgame">
+    <title>Meu Perfil | EXgame</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🎮 EXGame</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../../index.html" class="nav-link">
+                🏠 Início
+            </a>
+
+            <a href="explorar.html" class="nav-link">
+                🔎 Explorar
+            </a>
+
+            <a href="categorias.html" class="nav-link">
+                🗂️ Categorias
+            </a>
+
+            <a href="favoritos.html" class="nav-link">
+                ❤️ Favoritos
+            </a>
+
+            <a href="minha-lista.html" class="nav-link">
+                📋 Minha lista
+            </a>
+
+            <a href="destaques.html" class="nav-link">
+                ⭐ Destaques
+            </a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+            <a href="perfil.html" class="nav-link active">
+                👤 Meu perfil
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <header class="page-header">
+            <div class="page-heading">
+                <h1>Meu perfil</h1>
+                <p>Gerencie suas informações e acompanhe sua jornada gamer.</p>
+            </div>
+        </header>
+
+        <section class="page-content">
+
+            <!-- CAPA E AVATAR -->
+            <div class="profile-cover">
+
+                <div class="profile-avatar">
+                    
+                </div>
+
+            </div>
+
+            <!-- INFORMAÇÕES DO USUÁRIO -->
+            <div class="profile-info">
+
+                <h2>Seu nome
+                </h2>
+                <p>Jogador desde sempre 🎮</p>
+
+            </div>
+
+            <!-- ESTATÍSTICAS -->
+            <div class="profile-stats">
+
+                <div class="profile-stat">
+                    <strong id="profile-total-games">0</strong>
+                    <span>Jogos registrados</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong id="profile-total-favorites">0</strong>
+                    <span>Favoritos</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong id="profile-total-completed">0</strong>
+                    <span>Jogos concluídos</span>
+                </div>
+
+            </div>
+
+            <!-- FORMULÁRIO -->
+            <section class="content-panel">
+
+                <h2 class="panel-title">Informações pessoais</h2>
+
+                <form class="profile-form" id="profile-form">
+
+                    <div class="form-group">
+                        <label for="user-name">Nome</label>
+                        <input
+                            type="text"
+                            id="user-name"
+                            name="name"
+                            value=""
+                            placeholder="Digite seu nome"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email">E-mail</label>
+                        <input
+                            type="email"
+                            id="user-email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-bio">Sobre mim</label>
+                        <textarea
+                            id="user-bio"
+                            name="bio"
+                            placeholder="Conte um pouco sobre você e seus jogos favoritos..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button
+                            type="reset"
+                            class="secondary-button"
+                        >
+                            Limpar
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Salvar alterações
+                        </button>
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Game Tracker. Organize suas experiências.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../js/navegacao.js" defer></script>
+
+</body>
+</html>

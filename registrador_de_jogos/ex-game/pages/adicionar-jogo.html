@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastre um novo jogo no Game Tracker">
+
+    <title>Adicionar Jogo | Game Tracker</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🎮 GAME TRACKER</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../index.html" class="nav-link">🏠 Início</a>
+            <a href="explorar.html" class="nav-link">🔎 Explorar</a>
+            <a href="categorias.html" class="nav-link">🗂️ Categorias</a>
+            <a href="favoritos.html" class="nav-link">❤️ Favoritos</a>
+            <a href="minha-lista.html" class="nav-link">📋 Minha lista</a>
+            <a href="destaques.html" class="nav-link">⭐ Destaques</a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+            <a href="perfil.html" class="nav-link">👤 Meu perfil</a>
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div class="page-heading">
+                <h1>Adicionar jogo 🎮</h1>
+                <p>Cadastre um novo título na sua biblioteca.</p>
+            </div>
+
+            <a href="explorar.html" class="secondary-button">
+                ← Voltar
+            </a>
+
+        </header>
+
+        <section class="page-content">
+
+            <section class="content-panel">
+
+                <h2 class="panel-title">Informações do jogo</h2>
+
+                <form class="profile-form" id="game-form">
+
+                    <!-- TÍTULO -->
+                    <div class="form-group">
+
+                        <label for="game-title">
+                            Nome do jogo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="game-title"
+                            name="titulo"
+                            placeholder="Ex.: Elden Ring"
+                            required
+                            maxlength="100"
+                        >
+
+                    </div>
+
+                    <!-- PLATAFORMA -->
+                    <div class="form-group">
+
+                        <label for="game-platform">
+                            Plataforma
+                        </label>
+
+                        <select
+                            id="game-platform"
+                            name="plataforma"
+                            class="filter-select"
+                            required
+                        >
+                            <option value="">Selecione uma plataforma</option>
+                            <option value="PC">PC</option>
+                            <option value="PlayStation">PlayStation</option>
+                            <option value="Xbox">Xbox</option>
+                            <option value="Nintendo">Nintendo</option>
+                            <option value="Mobile">Mobile</option>
+                            <option value="Multiplataforma">Multiplataforma</option>
+                        </select>
+
+                    </div>
+
+                    <!-- GÊNERO -->
+                    <div class="form-group">
+
+                        <label for="game-genre">
+                            Gênero
+                        </label>
+
+                        <select
+                            id="game-genre"
+                            name="genero"
+                            class="filter-select"
+                            required
+                        >
+                            <option value="">Selecione um gênero</option>
+                            <option value="Ação">Ação</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="RPG">RPG</option>
+                            <option value="Terror">Terror</option>
+                            <option value="Corrida">Corrida</option>
+                            <option value="Estratégia">Estratégia</option>
+                            <option value="Esportes">Esportes</option>
+                            <option value="Simulação">Simulação</option>
+                            <option value="Indie">Indie</option>
+                        </select>
+
+                    </div>
+
+                    <!-- IMAGEM -->
+                    <div class="form-group">
+
+                        <label for="game-image">
+                            Endereço da imagem
+                        </label>
+
+                        <input
+                            type="url"
+                            id="game-image"
+                            name="imagem"
+                            placeholder="https://exemplo.com/imagem.jpg"
+                        >
+
+                        <small>
+                            Insira o endereço de uma imagem para representar o jogo.
+                        </small>
+
+                    </div>
+
+                    <!-- FAVORITO -->
+                    <div class="form-group">
+
+                        <label for="game-favorite">
+                            Favoritar este jogo?
+                        </label>
+
+                        <select
+                            id="game-favorite"
+                            name="favorito"
+                            class="filter-select"
+                        >
+                            <option value="0">Não</option>
+                            <option value="1">Sim</option>
+                        </select>
+
+                    </div>
+
+                    <!-- BOTÕES -->
+                    <div class="form-actions">
+
+                        <a
+                            href="explorar.html"
+                            class="secondary-button"
+                        >
+                            Cancelar
+                        </a>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Cadastrar jogo
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Game Tracker. Organize suas experiências.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../js/jogos.js" defer></script>
+<script src="../js/navegacao.js" defer></script>
+<script src="../js/adicionar-jogo.js" defer></script>
+
+</body>
+</html>

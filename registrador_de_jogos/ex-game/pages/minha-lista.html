@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sua biblioteca pessoal de jogos">
+    <title>Minha Lista | EXgame</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    </head>
+
+<body>
+
+<div class="app-container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🎮 EXGame</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../../index.html" class="nav-link">🏠 Início</a>
+            <a href="explorar.html" class="nav-link">🔎 Explorar</a>
+            <a href="categorias.html" class="nav-link">🗂️ Categorias</a>
+            <a href="favoritos.html" class="nav-link">❤️ Favoritos</a>
+            <a href="minha-lista.html" class="nav-link active">📋 Minha lista</a>
+            <a href="destaques.html" class="nav-link">⭐ Destaques</a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+            <a href="perfil.html" class="nav-link">👤 Meu perfil</a>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div class="page-heading">
+                <h1>Minha lista 📋</h1>
+                <p>Acompanhe seus jogos e organize seu progresso.</p>
+            </div>
+
+            <a href="explorar.html" class="add-button">
+                + Adicionar jogo
+            </a>
+
+        </header>
+
+        <section class="page-content">
+
+            <!-- RESUMO DA BIBLIOTECA -->
+            <div class="profile-stats">
+
+                <div class="profile-stat">
+                    <strong id="list-total">0</strong>
+                    <span>Total de jogos</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong id="list-playing">0</strong>
+                    <span>Jogando</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong id="list-completed">0</strong>
+                    <span>Concluídos</span>
+                </div>
+
+            </div>
+
+            <!-- FILTROS DE STATUS -->
+            <div class="list-filters">
+
+                <button class="filter-tab active" data-status="todos">
+                    Todos
+                </button>
+
+                <button class="filter-tab" data-status="quero-jogar">
+                    Quero jogar
+                </button>
+
+                <button class="filter-tab" data-status="jogando">
+                    Jogando
+                </button>
+
+                <button class="filter-tab" data-status="concluido">
+                    Concluídos
+                </button>
+
+                <button class="filter-tab" data-status="abandonado">
+                    Abandonados
+                </button>
+
+            </div>
+
+            <!-- LISTA DE JOGOS -->
+            <div class="games-grid" id="my-games-grid">
+
+                <article class="game-card">
+
+                    <div class="game-cover">
+                        <img
+                            src="../assets/images/EldenRing.jpg"
+                            alt="Capa de Elden Ring"
+                        >
+                    </div>
+
+                    <div class="game-info">
+
+                        <h3>Elden Ring</h3>
+                        <p>RPG de ação</p>
+
+                        <div class="game-card-footer">
+
+                            <span class="game-status">
+                                Quero jogar
+                            </span>
+
+                            <button
+                                class="favorite-button"
+                                type="button"
+                                aria-label="Adicionar Elden Ring aos favoritos"
+                            >
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="game-card">
+
+                    <div class="game-cover">
+                        <img
+                            src="../assets/images/GodOfWar.jpeg"
+                            alt="Capa de God of War"
+                        >
+                    </div>
+
+                    <div class="game-info">
+
+                        <h3>God of War</h3>
+                        <p>Ação e aventura</p>
+
+                        <div class="game-card-footer">
+
+                            <span class="game-status">
+                                Concluído
+                            </span>
+
+                            <button
+                                class="favorite-button active"
+                                type="button"
+                                aria-label="Remover God of War dos favoritos"
+                            >
+                                ♥
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="game-card">
+
+                    <div class="game-cover">
+                        <img
+                            src="../assets/images/HollowKnight.jpeg"
+                            alt="Capa de Hollow Knight"
+                        >
+                    </div>
+
+                    <div class="game-info">
+
+                        <h3>Hollow Knight</h3>
+                        <p>Metroidvania</p>
+
+                        <div class="game-card-footer">
+
+                            <span class="game-status">
+                                Jogando
+                            </span>
+
+                            <button
+                                class="favorite-button"
+                                type="button"
+                                aria-label="Adicionar Hollow Knight aos favoritos"
+                            >
+                                ♡
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Game Tracker. Organize suas experiências.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../js/navegacao.js" defer></script>
+
+</body>
+</html>

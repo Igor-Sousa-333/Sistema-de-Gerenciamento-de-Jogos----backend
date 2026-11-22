@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veja os detalhes de um jogo no Game Tracker">
+
+    <title>Detalhes do Jogo | EXgame</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🎮 EXgame</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../index.html" class="nav-link">🏠 Início</a>
+            <a href="explorar.html" class="nav-link active">🔎 Explorar</a>
+            <a href="categorias.html" class="nav-link">🗂️ Categorias</a>
+            <a href="favoritos.html" class="nav-link">❤️ Favoritos</a>
+            <a href="minha-lista.html" class="nav-link">📋 Minha lista</a>
+            <a href="destaques.html" class="nav-link">⭐ Destaques</a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+            <a href="perfil.html" class="nav-link">👤 Meu perfil</a>
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div class="page-heading">
+                <h1>Detalhes do jogo</h1>
+                <p>Confira as informações deste título.</p>
+            </div>
+
+            <a href="explorar.html" class="secondary-button">
+                ← Voltar
+            </a>
+
+        </header>
+
+        <section class="page-content">
+
+            <article class="game-details" id="game-details">
+
+                <!-- IMAGEM DO JOGO -->
+                <div class="details-cover">
+
+                    <img
+                        id="details-image"
+                        src="../assets/images/elden-ring.jpg"
+                        alt="Capa do jogo"
+                    >
+
+                </div>
+
+                <!-- INFORMAÇÕES DO JOGO -->
+                <div class="details-content">
+
+                    <span class="game-category" id="details-category">
+                        RPG
+                    </span>
+
+                    <h2 id="details-title">Elden Ring</h2>
+
+                    <p
+                        class="details-description"
+                        id="details-description"
+                    >
+                        Explore um vasto mundo de fantasia, enfrente
+                        inimigos desafiadores e descubra os mistérios
+                        das Terras Intermédias.
+                    </p>
+
+                    <div class="details-information">
+
+                        <div>
+                            <span>Gênero</span>
+                            <strong id="details-genre">RPG de ação</strong>
+                        </div>
+
+                        <div>
+                            <span>Plataforma</span>
+                            <strong id="details-platform">PC, PlayStation e Xbox</strong>
+                        </div>
+
+                        <div>
+                            <span>Desenvolvedora</span>
+                            <strong id="details-developer">FromSoftware</strong>
+                        </div>
+
+                    </div>
+
+                    <!-- AÇÕES -->
+                    <div class="details-actions">
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="add-to-list-button"
+                        >
+                            + Adicionar à minha lista
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="details-favorite-button"
+                        >
+                            ♡ Adicionar aos favoritos
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Game Tracker. Organize suas experiências.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../js/jogos.js" defer></script>
+<script src="../js/navegacao.js" defer></script>
+<script src="../js/detalhes.js" defer></script>
+
+</body>
+</html>
