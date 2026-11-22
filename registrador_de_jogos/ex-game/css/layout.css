@@ -1,0 +1,90 @@
+
+/* ========================================
+   GAME TRACKER - LAYOUT
+   Estrutura geral das páginas
+======================================== */
+
+/* Área principal das páginas internas */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 32px;
+}
+
+/* Cabeçalho das páginas */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.page-heading h1 {
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-size: 28px;
+}
+
+.page-heading p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Área de conteúdo */
+.page-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Organização em colunas */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Painéis reutilizáveis */
+.content-panel {
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+}
+
+.panel-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+    .main-content {
+        padding: 24px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        padding: 18px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-heading h1 {
+        font-size: 23px;
+    }
+
+    .content-panel {
+        padding: 18px;
+    }
+}
