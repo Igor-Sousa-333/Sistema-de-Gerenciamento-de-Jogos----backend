@@ -21,23 +21,24 @@
     <!-- MENU LATERAL -->
     <aside class="sidebar">
 
-        <div class="logo">
-            <h2>🎮 EXgame</h2>
-        </div>
-
-        <nav class="sidebar-nav">
-
-            <a href="../index.html" class="nav-link">🏠 Início</a>
-            <a href="explorar.html" class="nav-link active">🔎 Explorar</a>
-            <a href="categorias.html" class="nav-link">🗂️ Categorias</a>
-            <a href="favoritos.html" class="nav-link">❤️ Favoritos</a>
-            <a href="minha-lista.html" class="nav-link">📋 Minha lista</a>
-            <a href="destaques.html" class="nav-link">⭐ Destaques</a>
-
+        <a href="../../index.html" class="logo">EX<span>Game</span></a>
+        <nav class="sidebar-navigation">
+            <div class="nav-group">
+                <p class="nav-title">MENU PRINCIPAL</p>
+                <a href="../../index.html" class="nav-link"><span class="nav-icon">⌂</span>Início</a>
+                <a href="categorias.html" class="nav-link"><span class="nav-icon">▦</span>Categorias</a>
+            </div>
+            <div class="nav-group">
+                <p class="nav-title">MINHA BIBLIOTECA</p>
+                <a href="favoritos.html" class="nav-link"><span class="nav-icon">♡</span>Favoritos</a>
+                <a href="minha-lista.html" class="nav-link"><span class="nav-icon">▤</span>Minha lista</a>
+            </div>
         </nav>
-
-        <div class="sidebar-profile">
-            <a href="perfil.html" class="nav-link">👤 Meu perfil</a>
+        <div class="sidebar-bottom">
+            <a href="perfil.html" class="profile-link">
+                <div class="profile-avatar">G</div>
+                <div class="profile-info"><strong>Meu perfil</strong><span>Minha conta</span></div>
+            </a>
         </div>
 
     </aside>
@@ -52,7 +53,7 @@
                 <p>Confira as informações deste título.</p>
             </div>
 
-            <a href="explorar.html" class="secondary-button">
+            <a href="../../index.html" class="secondary-button">
                 ← Voltar
             </a>
 
@@ -112,6 +113,14 @@
                             id="details-favorite-button"
                         >
                             ♡ Favoritar
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="details-list-button"
+                        >
+                            + Adicionar à minha lista
                         </button>
 
                         <button

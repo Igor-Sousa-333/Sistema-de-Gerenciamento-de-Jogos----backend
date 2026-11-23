@@ -1,11 +1,19 @@
 const express = require("express");
 const db = require("./database");
+const path = require("path");
 
 const app = express();
 const PORT = 3000;
 
 // Permite que o servidor leia dados enviados em formato JSON
 app.use(express.json());
+
+// Disponibiliza as páginas HTML e os arquivos estáticos do front-end
+app.use(express.static(path.join(__dirname, "../..")));
+
+app.get(["/", "/index.html"], (req, res) => {
+  res.sendFile(path.join(__dirname, "../..", "index.html"));
+});
 
 // Libera o acesso do front-end (navegador) para esta API
 app.use((req, res, next) => {
@@ -71,8 +79,8 @@ app.post("/jogos", (req, res) => {
     const favoritoValido = Number(favorito) === 1 ? 1 : 0;
 
     const stmt = db.prepare(`
-      INSERT INTO jogos (titulo, plataforma, genero, imagem, descricao, desenvolvedora, favorito)
-      VALUES (?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO jogos (titulo, plataforma, genero, imagem, descricao, desenvolvedora, favorito, status, na_lista, catalogo, destaque)
+      VALUES (?, ?, ?, ?, ?, ?, ?, 'quero-jogar', 1, 0, 0)
     `);
 
     const resultado = stmt.run(
@@ -208,6 +216,54 @@ app.patch("/jogos/:id/favorito", (req, res) => {
   } catch (erro) {
     console.error("Erro ao alterar favorito:", erro);
     return res.status(500).json({ erro: "Erro interno ao alterar favorito." });
+  }
+});
+
+app.patch("/jogos/:id/lista", (req, res) => {
+  try {
+    const id = Number(req.params.id);
+    if (Number.isNaN(id)) {
+      return res.status(400).json({ erro: "O ID informado deve ser um número válido." });
+    }
+
+    const jogo = db.prepare("SELECT * FROM jogos WHERE id = ?").get(id);
+    if (!jogo) {
+      return res.status(404).json({ erro: "Jogo não encontrado." });
+    }
+
+    const naLista = req.body?.na_lista === 1 ? 1 : 0;
+    db.prepare("UPDATE jogos SET na_lista = ? WHERE id = ?").run(naLista, id);
+
+    return res.status(200).json(db.prepare("SELECT * FROM jogos WHERE id = ?").get(id));
+  } catch (erro) {
+    console.error("Erro ao alterar a lista:", erro);
+    return res.status(500).json({ erro: "Erro interno ao alterar a lista." });
+  }
+});
+
+app.patch("/jogos/:id/status", (req, res) => {
+  try {
+    const id = Number(req.params.id);
+    const statusPermitidos = ["quero-jogar", "jogando", "concluido", "abandonado"];
+
+    if (Number.isNaN(id)) {
+      return res.status(400).json({ erro: "O ID informado deve ser um número válido." });
+    }
+
+    const jogo = db.prepare("SELECT * FROM jogos WHERE id = ?").get(id);
+    if (!jogo) {
+      return res.status(404).json({ erro: "Jogo não encontrado." });
+    }
+
+    if (!statusPermitidos.includes(req.body?.status)) {
+      return res.status(400).json({ erro: "Status inválido." });
+    }
+
+    db.prepare("UPDATE jogos SET status = ? WHERE id = ?").run(req.body.status, id);
+    return res.status(200).json(db.prepare("SELECT * FROM jogos WHERE id = ?").get(id));
+  } catch (erro) {
+    console.error("Erro ao alterar status:", erro);
+    return res.status(500).json({ erro: "Erro interno ao alterar o status." });
   }
 });
 

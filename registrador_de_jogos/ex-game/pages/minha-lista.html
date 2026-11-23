@@ -19,23 +19,24 @@
 
     <aside class="sidebar">
 
-        <div class="logo">
-            <h2>🎮 EXGame</h2>
-        </div>
-
-        <nav class="sidebar-nav">
-
-            <a href="../../index.html" class="nav-link">🏠 Início</a>
-            <a href="explorar.html" class="nav-link">🔎 Explorar</a>
-            <a href="categorias.html" class="nav-link">🗂️ Categorias</a>
-            <a href="favoritos.html" class="nav-link">❤️ Favoritos</a>
-            <a href="minha-lista.html" class="nav-link active">📋 Minha lista</a>
-            <a href="destaques.html" class="nav-link">⭐ Destaques</a>
-
+        <a href="../../index.html" class="logo">EX<span>Game</span></a>
+        <nav class="sidebar-navigation">
+            <div class="nav-group">
+                <p class="nav-title">MENU PRINCIPAL</p>
+                <a href="../../index.html" class="nav-link"><span class="nav-icon">⌂</span>Início</a>
+                <a href="categorias.html" class="nav-link"><span class="nav-icon">▦</span>Categorias</a>
+            </div>
+            <div class="nav-group">
+                <p class="nav-title">MINHA BIBLIOTECA</p>
+                <a href="favoritos.html" class="nav-link"><span class="nav-icon">♡</span>Favoritos</a>
+                <a href="minha-lista.html" class="nav-link active"><span class="nav-icon">▤</span>Minha lista</a>
+            </div>
         </nav>
-
-        <div class="sidebar-profile">
-            <a href="perfil.html" class="nav-link">👤 Meu perfil</a>
+        <div class="sidebar-bottom">
+            <a href="perfil.html" class="profile-link">
+                <div class="profile-avatar">G</div>
+                <div class="profile-info"><strong>Meu perfil</strong><span>Minha conta</span></div>
+            </a>
         </div>
 
     </aside>
@@ -49,8 +50,8 @@
                 <p>Acompanhe seus jogos e organize seu progresso.</p>
             </div>
 
-            <a href="explorar.html" class="add-button">
-                + Adicionar jogo
+            <a href="../../index.html" class="add-button">
+                + Ver jogos
             </a>
 
         </header>
@@ -103,111 +104,7 @@
             </div>
 
             <!-- LISTA DE JOGOS -->
-            <div class="games-grid" id="my-games-grid">
-
-                <article class="game-card">
-
-                    <div class="game-cover">
-                        <img
-                            src="../assets/images/EldenRing.jpg"
-                            alt="Capa de Elden Ring"
-                        >
-                    </div>
-
-                    <div class="game-info">
-
-                        <h3>Elden Ring</h3>
-                        <p>RPG de ação</p>
-
-                        <div class="game-card-footer">
-
-                            <span class="game-status">
-                                Quero jogar
-                            </span>
-
-                            <button
-                                class="favorite-button"
-                                type="button"
-                                aria-label="Adicionar Elden Ring aos favoritos"
-                            >
-                                ♡
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-                <article class="game-card">
-
-                    <div class="game-cover">
-                        <img
-                            src="../assets/images/GodOfWar.jpeg"
-                            alt="Capa de God of War"
-                        >
-                    </div>
-
-                    <div class="game-info">
-
-                        <h3>God of War</h3>
-                        <p>Ação e aventura</p>
-
-                        <div class="game-card-footer">
-
-                            <span class="game-status">
-                                Concluído
-                            </span>
-
-                            <button
-                                class="favorite-button active"
-                                type="button"
-                                aria-label="Remover God of War dos favoritos"
-                            >
-                                ♥
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-                <article class="game-card">
-
-                    <div class="game-cover">
-                        <img
-                            src="../assets/images/HollowKnight.jpeg"
-                            alt="Capa de Hollow Knight"
-                        >
-                    </div>
-
-                    <div class="game-info">
-
-                        <h3>Hollow Knight</h3>
-                        <p>Metroidvania</p>
-
-                        <div class="game-card-footer">
-
-                            <span class="game-status">
-                                Jogando
-                            </span>
-
-                            <button
-                                class="favorite-button"
-                                type="button"
-                                aria-label="Adicionar Hollow Knight aos favoritos"
-                            >
-                                ♡
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
+            <div class="games-grid" id="my-games-grid"></div>
 
         </section>
 
@@ -219,6 +116,8 @@
 
 </div>
 
+<script src="../js/api.js" defer></script>
+<script src="../js/minha-lista.js" defer></script>
 <script src="../js/navegacao.js" defer></script>
 
 </body>

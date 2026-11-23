@@ -20,41 +20,23 @@
     <!-- MENU LATERAL -->
     <aside class="sidebar">
 
-        <div class="logo">
-            <h2>🎮 EXGame</h2>
-        </div>
-
-        <nav class="sidebar-nav">
-
-            <a href="../../index.html" class="nav-link">
-                🏠 Início
-            </a>
-
-            <a href="explorar.html" class="nav-link">
-                🔎 Explorar
-            </a>
-
-            <a href="categorias.html" class="nav-link">
-                🗂️ Categorias
-            </a>
-
-            <a href="favoritos.html" class="nav-link active">
-                ❤️ Favoritos
-            </a>
-
-            <a href="minha-lista.html" class="nav-link">
-                📋 Minha lista
-            </a>
-
-            <a href="destaques.html" class="nav-link">
-                ⭐ Destaques
-            </a>
-
+        <a href="../../index.html" class="logo">EX<span>Game</span></a>
+        <nav class="sidebar-navigation">
+            <div class="nav-group">
+                <p class="nav-title">MENU PRINCIPAL</p>
+                <a href="../../index.html" class="nav-link"><span class="nav-icon">⌂</span>Início</a>
+                <a href="categorias.html" class="nav-link"><span class="nav-icon">▦</span>Categorias</a>
+            </div>
+            <div class="nav-group">
+                <p class="nav-title">MINHA BIBLIOTECA</p>
+                <a href="favoritos.html" class="nav-link active"><span class="nav-icon">♡</span>Favoritos</a>
+                <a href="minha-lista.html" class="nav-link"><span class="nav-icon">▤</span>Minha lista</a>
+            </div>
         </nav>
-
-        <div class="sidebar-profile">
-            <a href="perfil.html" class="nav-link">
-                👤 Meu perfil
+        <div class="sidebar-bottom">
+            <a href="perfil.html" class="profile-link">
+                <div class="profile-avatar">G</div>
+                <div class="profile-info"><strong>Meu perfil</strong><span>Minha conta</span></div>
             </a>
         </div>
 
@@ -70,8 +52,8 @@
                 <p>Os jogos que você mais gosta, reunidos em um só lugar.</p>
             </div>
 
-            <a href="explorar.html" class="add-button">
-                + Explorar jogos
+            <a href="../../index.html" class="add-button">
+                + Ver jogos
             </a>
 
         </header>
@@ -84,115 +66,14 @@
                 <span class="summary-icon">❤️</span>
 
                 <div>
-                    <strong id="favorites-count">3 jogos</strong>
+                    <strong id="favorites-count">Carregando...</strong>
                     <span>Na sua coleção de favoritos</span>
                 </div>
 
             </div>
 
             <!-- GRADE DE FAVORITOS -->
-            <div class="favorites-grid" id="favorites-grid">
-
-                <!-- JOGO 1 -->
-                <article class="favorite-card">
-
-                    <img
-                        src="../assets/images/EldenRing.jpg"
-                        alt="Capa do jogo Elden Ring"
-                    >
-
-                    <div class="favorite-card-content">
-
-                        <h3>Elden Ring</h3>
-                        <p>RPG de ação</p>
-
-                        <div class="favorite-card-footer">
-
-                            <span class="game-status">
-                                Quero jogar
-                            </span>
-
-                            <button
-                                type="button"
-                                class="remove-favorite"
-                                aria-label="Remover Elden Ring dos favoritos"
-                            >
-                                ♥ Remover
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-                <!-- JOGO 2 -->
-                <article class="favorite-card">
-
-                    <img
-                        src="../assets/images/GodOfWar.jpeg"
-                        alt="Capa do jogo God of War"
-                    >
-
-                    <div class="favorite-card-content">
-
-                        <h3>God of War</h3>
-                        <p>Ação e aventura</p>
-
-                        <div class="favorite-card-footer">
-
-                            <span class="game-status">
-                                Concluído
-                            </span>
-
-                            <button
-                                type="button"
-                                class="remove-favorite"
-                                aria-label="Remover God of War dos favoritos"
-                            >
-                                ♥ Remover
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-                <!-- JOGO 3 -->
-                <article class="favorite-card">
-
-                    <img
-                        src="../assets/images/HollowKnight.jpeg"
-                        alt="Capa do jogo Hollow Knight"
-                    >
-
-                    <div class="favorite-card-content">
-
-                        <h3>Hollow Knight</h3>
-                        <p>Metroidvania</p>
-
-                        <div class="favorite-card-footer">
-
-                            <span class="game-status">
-                                Jogando
-                            </span>
-
-                            <button
-                                type="button"
-                                class="remove-favorite"
-                                aria-label="Remover Hollow Knight dos favoritos"
-                            >
-                                ♥ Remover
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
+            <div class="favorites-grid" id="favorites-grid"></div>
 
         </section>
 
@@ -204,6 +85,8 @@
 
 </div>
 
+<script src="../js/api.js" defer></script>
+<script src="../js/favoritos.js" defer></script>
 <script src="../js/navegacao.js" defer></script>
 
 </body>

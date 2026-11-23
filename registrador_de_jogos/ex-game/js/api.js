@@ -99,3 +99,17 @@ window.cadastrarJogo = cadastrarJogo;
 window.atualizarJogo = atualizarJogo;
 window.excluirJogo = excluirJogo;
 window.alternarFavorito = alternarFavorito;
+window.alterarLista = async function(id, naLista) {
+    return await fazerRequisicao(`${API}/${id}/lista`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ na_lista: naLista })
+    });
+};
+window.alterarStatus = async function(id, status) {
+    return await fazerRequisicao(`${API}/${id}/status`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status })
+    });
+};

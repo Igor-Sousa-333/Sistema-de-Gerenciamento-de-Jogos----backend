@@ -9,22 +9,80 @@ async function carregarJogos() {
 
     try {
         const jogos = await listarJogos();
+        const parametros = new URLSearchParams(window.location.search);
+        const termoPesquisa = (parametros.get("q") || "").trim();
+        const generoPesquisa = (parametros.get("genero") || "").trim();
+        const campoPesquisa = document.getElementById("game-search");
+
+        if (campoPesquisa && termoPesquisa) {
+            campoPesquisa.value = termoPesquisa;
+        }
+
+        const filtroGenero = document.getElementById("genre-filter");
+        if (filtroGenero) {
+            if (generoPesquisa) {
+                filtroGenero.value = generoPesquisa;
+            }
+
+            filtroGenero.addEventListener("change", () => {
+                const parametros = new URLSearchParams(window.location.search);
+                if (filtroGenero.value === "todos") {
+                    parametros.delete("genero");
+                } else {
+                    parametros.set("genero", filtroGenero.value);
+                }
+                window.location.search = parametros.toString();
+            });
+        }
+
+        const normalizar = (valor) =>
+            String(valor || "")
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase();
+
+        const termoNormalizado = normalizar(termoPesquisa);
+        const generoNormalizado = normalizar(generoPesquisa);
+
+        const jogosFiltrados = jogos.filter((jogo) => {
+            const pertenceAoCatalogo = Number(jogo.catalogo) === 1 ||
+                Number(jogo.na_lista) === 1;
+
+            if (!pertenceAoCatalogo) return false;
+            const correspondePesquisa = !termoNormalizado ||
+                [
+                    jogo.titulo,
+                    jogo.genero,
+                    jogo.plataforma,
+                    jogo.descricao,
+                    jogo.desenvolvedora
+                ].some((valor) => normalizar(valor).includes(termoNormalizado));
+
+            const correspondeGenero = !generoNormalizado ||
+                normalizar(jogo.genero).includes(generoNormalizado);
+
+            return correspondePesquisa && correspondeGenero;
+        });
 
         // Limpa os cartões anteriores
         gradeJogos.innerHTML = "";
 
         // Atualiza a quantidade de jogos
         contadorJogos.textContent =
-            `${jogos.length} ${jogos.length === 1 ? "jogo encontrado" : "jogos encontrados"}`;
+            `${jogosFiltrados.length} ${jogosFiltrados.length === 1 ? "jogo encontrado" : "jogos encontrados"}`;
 
         // Exibe uma mensagem quando não existem jogos
-        if (jogos.length === 0) {
-            gradeJogos.textContent = "Nenhum jogo cadastrado ainda.";
+        if (jogosFiltrados.length === 0) {
+            gradeJogos.textContent = termoPesquisa
+                ? `Nenhum jogo encontrado para "${termoPesquisa}".`
+                : generoPesquisa
+                    ? "Nenhum jogo encontrado nesta categoria."
+                    : "Nenhum jogo cadastrado ainda.";
             return;
         }
 
         // Cria um cartão para cada jogo recebido da API
-        jogos.forEach(jogo => {
+        jogosFiltrados.forEach(jogo => {
             const cartao = document.createElement("article");
             cartao.className = "game-card";
 

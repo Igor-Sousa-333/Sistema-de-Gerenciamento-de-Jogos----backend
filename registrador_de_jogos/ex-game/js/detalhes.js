@@ -12,6 +12,7 @@ const botaoEditar = document.getElementById("edit-game-button");
 const botaoCancelar = document.getElementById("cancel-edit-button");
 const botaoExcluir = document.getElementById("delete-game-button");
 const botaoFavorito = document.getElementById("details-favorite-button");
+const botaoLista = document.getElementById("details-list-button");
 
 let jogoAtual;
 
@@ -52,10 +53,19 @@ function exibirDetalhes() {
     imagemJogo.alt = `Capa de ${jogoAtual.titulo}`;
 
     atualizarBotaoFavorito();
+    atualizarBotaoLista();
+}
+
+function atualizarBotaoLista() {
+    if (!botaoLista) return;
+    botaoLista.textContent = Number(jogoAtual.na_lista) === 1
+        ? "✓ Na minha lista"
+        : "+ Adicionar à minha lista";
 }
 
 // Atualiza o botão de favorito
 function atualizarBotaoFavorito() {
+    if (!botaoFavorito) return;
     botaoFavorito.textContent =
         jogoAtual.favorito === 1
             ? "♥ Remover dos favoritos"
@@ -74,18 +84,22 @@ function preencherFormulario() {
 }
 
 // Abre o formulário de edição
-botaoEditar.addEventListener("click", () => {
-    preencherFormulario();
-    formularioEdicao.hidden = false;
-});
+if (botaoEditar) {
+    botaoEditar.addEventListener("click", () => {
+        preencherFormulario();
+        formularioEdicao.hidden = false;
+    });
+}
 
 // Cancela a edição
-botaoCancelar.addEventListener("click", () => {
-    formularioEdicao.hidden = true;
-});
+if (botaoCancelar) {
+    botaoCancelar.addEventListener("click", () => {
+        formularioEdicao.hidden = true;
+    });
+}
 
 // Envia as alterações para a API
-formularioEdicao.addEventListener("submit", async (evento) => {
+if (formularioEdicao) formularioEdicao.addEventListener("submit", async (evento) => {
     evento.preventDefault();
 
     const dadosAtualizados = {
@@ -113,7 +127,7 @@ formularioEdicao.addEventListener("submit", async (evento) => {
 });
 
 // Alterna o favorito
-botaoFavorito.addEventListener("click", async () => {
+if (botaoFavorito) botaoFavorito.addEventListener("click", async () => {
     try {
         const novoValor = jogoAtual.favorito === 1 ? 0 : 1;
 
@@ -127,8 +141,20 @@ botaoFavorito.addEventListener("click", async () => {
     }
 });
 
+if (botaoLista) {
+    botaoLista.addEventListener("click", async () => {
+        try {
+            const novoValor = Number(jogoAtual.na_lista) === 1 ? 0 : 1;
+            jogoAtual = await alterarLista(idJogo, novoValor);
+            atualizarBotaoLista();
+        } catch (erro) {
+            alert("Erro ao atualizar minha lista: " + erro.message);
+        }
+    });
+}
+
 // Exclui o jogo
-botaoExcluir.addEventListener("click", async () => {
+if (botaoExcluir) botaoExcluir.addEventListener("click", async () => {
     const confirmacao = confirm(
         `Deseja realmente excluir "${jogoAtual.titulo}"?`
     );
@@ -140,7 +166,7 @@ botaoExcluir.addEventListener("click", async () => {
 
         alert("Jogo excluído com sucesso!");
 
-        window.location.href = "explorar.html";
+        window.location.href = "../../index.html";
 
     } catch (erro) {
         alert("Erro ao excluir jogo: " + erro.message);

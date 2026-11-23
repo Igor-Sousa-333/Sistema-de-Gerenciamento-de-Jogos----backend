@@ -41,11 +41,6 @@
                         Início
                     </a>
 
-                    <a href="ex-game/pages/explorar.html" class="nav-link">
-                        <span class="nav-icon">⌕</span>
-                        Explorar
-                    </a>
-
                     <a href="ex-game/pages/categorias.html" class="nav-link">
                         <span class="nav-icon">▦</span>
                         Categorias
@@ -58,7 +53,7 @@
 
                     <p class="nav-title">MINHA BIBLIOTECA</p>
 
-                    <a href="ex-gamepages/favoritos.html" class="nav-link">
+                    <a href="ex-game/pages/favoritos.html" class="nav-link">
                         <span class="nav-icon">♡</span>
                         Favoritos
                     </a>
@@ -66,11 +61,6 @@
                     <a href="ex-game/pages/minha-lista.html" class="nav-link">
                         <span class="nav-icon">▤</span>
                         Minha lista
-                    </a>
-
-                    <a href="ex-game/pages/destaques.html" class="nav-link">
-                        <span class="nav-icon">★</span>
-                        Destaques
                     </a>
 
                 </div>
@@ -122,7 +112,7 @@
 
                     <!-- PESQUISA -->
 
-                    <form class="search-box" action="pages/explorar.html" method="GET">
+                    <form class="search-box" action="index.html" method="GET">
 
                         <span class="search-icon">⌕</span>
 
@@ -138,7 +128,7 @@
 
                     <!-- ADICIONAR JOGO -->
 
-                    <a href="pages/adicionar-jogo.html" class="add-button">
+                    <a href="ex-game/pages/adicionar-jogo.html" class="add-button">
                         <span>+</span>
                         Adicionar jogo
                     </a>
@@ -168,8 +158,8 @@
                         e acompanhe suas aventuras.
                     </p>
 
-                    <a href="pages/explorar.html" class="primary-button">
-                        Explorar jogos
+                    <a href="#catalogo-jogos" class="primary-button">
+                        Ver jogos
                     </a>
 
                 </div>
@@ -215,254 +205,19 @@
                 </article>
 
 
-                <article class="stat-card">
-
-                    <div class="stat-icon blue">
-                        ★
-                    </div>
-
-                    <div>
-                        <p>Em destaque</p>
-                        <h2 id="total-highlights">0</h2>
-                    </div>
-
-                </article>
-
             </section>
 
 
-            <!-- =================================
-                 JOGOS EM DESTAQUE
-            ================================== -->
-
-            <section class="games-section">
-
+            <section class="games-section" id="catalogo-jogos">
                 <div class="section-heading">
-
                     <div>
-                        <p class="eyebrow">SELEÇÃO ESPECIAL</p>
-                        <h2>Jogos em destaque</h2>
+                        <p class="eyebrow">CATÁLOGO</p>
+                        <h2>Jogos pré-cadastrados</h2>
                     </div>
-
-                    <a href="pages/destaques.html" class="see-all">
-                        Ver todos →
-                    </a>
-
                 </div>
-
-
-                <div class="games-grid" id="home-highlights">
-
-
-                    <!-- CARD 1 -->
-
-                    <article class="game-card">
-
-                        <a href="ex-game/pages/detalhes-jogo.html" class="game-cover-link">
-
-                            <img
-                                src="ex-game/assets/images/EldenRing.jpg"
-                                alt="Capa de Elden Ring"
-                                class="game-cover"
-                            >
-
-                        </a>
-
-                        <div class="game-info">
-
-                            <span class="game-category">RPG</span>
-
-                            <h3>Elden Ring</h3>
-
-                            <p>PC • Ação e aventura</p>
-
-                            <div class="game-card-footer">
-
-                                <span class="game-platform">PC</span>
-
-                                <button
-                                    class="favorite-button"
-                                    type="button"
-                                    aria-label="Adicionar Elden Ring aos favoritos"
-                                >
-                                    ♡
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- CARD 2 -->
-
-                    <article class="game-card">
-
-                        <a href="pages/detalhes-jogo.html" class="game-cover-link">
-
-                            <img
-                                src="ex-game/assets/images/GodofWar.jpeg"
-                                alt="Capa de God of War"
-                                class="game-cover"
-                            >
-
-                        </a>
-
-                        <div class="game-info">
-
-                            <span class="game-category">Ação</span>
-
-                            <h3>God of War</h3>
-
-                            <p>PlayStation • Aventura</p>
-
-                            <div class="game-card-footer">
-
-                                <span class="game-platform">PlayStation</span>
-
-                                <button
-                                    class="favorite-button"
-                                    type="button"
-                                    aria-label="Adicionar God of War aos favoritos"
-                                >
-                                    ♡
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- CARD 3 -->
-
-                    <article class="game-card">
-
-                        <a href="pages/detalhes-jogo.html" class="game-cover-link">
-
-                            <img
-                                src="ex-game/assets/images/HollowKnight.jpeg"
-                                alt="Capa de Hollow Knight"
-                                class="game-cover"
-                            >
-
-                        </a>
-
-                        <div class="game-info">
-
-                            <span class="game-category">Aventura</span>
-
-                            <h3>Hollow Knight</h3>
-
-                            <p>PC • Metroidvania</p>
-
-                            <div class="game-card-footer">
-
-                                <span class="game-platform">PC</span>
-
-                                <button
-                                    class="favorite-button"
-                                    type="button"
-                                    aria-label="Adicionar Hollow Knight aos favoritos"
-                                >
-                                    ♡
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- CARD 4 -->
-
-                    <article class="game-card">
-
-                        <a href="pages/detalhes-jogo.html" class="game-cover-link">
-
-                            <img
-                                src="ex-game/assets/images/RedDeadRedemption2.jpeg"
-                                alt="Capa de Red Dead Redemption 2"
-                                class="game-cover"
-                            >
-
-                        </a>
-
-                        <div class="game-info">
-
-                            <span class="game-category">Aventura</span>
-
-                            <h3>Red Dead Redemption 2</h3>
-
-                            <p>PC • Mundo aberto</p>
-
-                            <div class="game-card-footer">
-
-                                <span class="game-platform">PC</span>
-
-                                <button
-                                    class="favorite-button"
-                                    type="button"
-                                    aria-label="Adicionar Red Dead Redemption 2 aos favoritos"
-                                >
-                                    ♡
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
+                <div class="games-grid" id="home-games-grid">
+                    <p>Carregando jogos...</p>
                 </div>
-
-            </section>
-
-
-            <!-- =================================
-                 ADICIONADOS RECENTEMENTE
-            ================================== -->
-
-            <section class="games-section">
-
-                <div class="section-heading">
-
-                    <div>
-                        <p class="eyebrow">SUA COLEÇÃO</p>
-                        <h2>Adicionados recentemente</h2>
-                    </div>
-
-                    <a href="pages/minha-lista.html" class="see-all">
-                        Minha biblioteca →
-                    </a>
-
-                </div>
-
-
-                <div class="recent-games" id="recent-games">
-
-                    <div class="recent-empty">
-
-                        <span>🎮</span>
-
-                        <h3>Sua biblioteca está esperando!</h3>
-
-                        <p>
-                            Adicione seu primeiro jogo para começar
-                            a organizar sua coleção.
-                        </p>
-
-                        <a href="pages/adicionar-jogo.html" class="text-link">
-                            Adicionar meu primeiro jogo →
-                        </a>
-
-                    </div>
-
-                </div>
-
             </section>
 
 
