@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -65,48 +64,33 @@
 
                 <!-- IMAGEM DO JOGO -->
                 <div class="details-cover">
-
-                    <img
-                        id="details-image"
-                        src="../assets/images/elden-ring.jpg"
-                        alt="Capa do jogo"
-                    >
-
+                    <img id="details-image" src="" alt="Capa do jogo">
                 </div>
 
                 <!-- INFORMAÇÕES DO JOGO -->
                 <div class="details-content">
 
-                    <span class="game-category" id="details-category">
-                        RPG
-                    </span>
+                    <span class="game-category" id="details-category"></span>
 
-                    <h2 id="details-title">Elden Ring</h2>
+                    <h2 id="details-title">Carregando jogo...</h2>
 
-                    <p
-                        class="details-description"
-                        id="details-description"
-                    >
-                        Explore um vasto mundo de fantasia, enfrente
-                        inimigos desafiadores e descubra os mistérios
-                        das Terras Intermédias.
-                    </p>
+                    <p class="details-description" id="details-description"></p>
 
                     <div class="details-information">
 
                         <div>
                             <span>Gênero</span>
-                            <strong id="details-genre">RPG de ação</strong>
+                            <strong id="details-genre"></strong>
                         </div>
 
                         <div>
                             <span>Plataforma</span>
-                            <strong id="details-platform">PC, PlayStation e Xbox</strong>
+                            <strong id="details-platform"></strong>
                         </div>
 
                         <div>
                             <span>Desenvolvedora</span>
-                            <strong id="details-developer">FromSoftware</strong>
+                            <strong id="details-developer"></strong>
                         </div>
 
                     </div>
@@ -117,9 +101,9 @@
                         <button
                             type="button"
                             class="primary-button"
-                            id="add-to-list-button"
+                            id="edit-game-button"
                         >
-                            + Adicionar à minha lista
+                            Editar jogo
                         </button>
 
                         <button
@@ -127,15 +111,78 @@
                             class="secondary-button"
                             id="details-favorite-button"
                         >
-                            ♡ Adicionar aos favoritos
+                            ♡ Favoritar
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="delete-game-button"
+                        >
+                            Excluir jogo
                         </button>
 
                     </div>
 
+                    <!-- FORMULÁRIO DE EDIÇÃO -->
+                    <form id="edit-game-form" hidden>
+
+                        <h3>Editar informações do jogo</h3>
+
+                        <div class="form-group">
+                            <label for="edit-title">Título</label>
+                            <input type="text" id="edit-title" required maxlength="100">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-platform">Plataforma</label>
+                            <input type="text" id="edit-platform" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-genre">Gênero</label>
+                            <input type="text" id="edit-genre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-image">Imagem (URL)</label>
+                            <input type="url" id="edit-image">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-description">Descrição</label>
+                            <textarea id="edit-description" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-developer">Desenvolvedora</label>
+                            <input type="text" id="edit-developer">
+                        </div>
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                            >
+                                Salvar alterações
+                            </button>
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="cancel-edit-button"
+                            >
+                                Cancelar
+                            </button>
+
+                        </div>
+
+                    </form>
+
                 </div>
 
             </article>
-
         </section>
 
         <footer class="footer">
@@ -146,9 +193,9 @@
 
 </div>
 
-<script src="../js/jogos.js" defer></script>
-<script src="../js/navegacao.js" defer></script>
+<script src="../js/api.js" defer></script>
 <script src="../js/detalhes.js" defer></script>
+<script src="../js/navegacao.js" defer></script>
 
 </body>
 </html>
